@@ -36,9 +36,13 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.MapGet("/current-degrees", () =>
+app.MapGet("/current-degrees", (string city) =>
     {
-        return new { Degrees = "38.5 C°" };
+        return new
+        {
+            city,
+            temperatureC = "38.5 C°"
+        };
     }).WithName("GetCurrentTemperature")
     .WithOpenApi();
 
