@@ -1,0 +1,5 @@
+.mono/
+.idea/
+.vs/
+**/bin/
+**/obj/
