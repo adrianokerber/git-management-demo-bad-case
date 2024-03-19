@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("projeto-ruim")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b3136d22290c803439eccc5856cdda44834c40a")]
 [assembly: System.Reflection.AssemblyProductAttribute("projeto-ruim")]
 [assembly: System.Reflection.AssemblyTitleAttribute("projeto-ruim")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
