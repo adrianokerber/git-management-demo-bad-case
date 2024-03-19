@@ -1,3 +1,9 @@
+using System;
+using System.Linq;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -36,11 +42,12 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.MapGet("/current-degrees", (string city) =>
+app.MapGet("/current-degrees", (string where, DateTimeOffset when) =>
     {
         return new
         {
-            city,
+            when,
+            city = where,
             temperatureC = "38.5 C°"
         };
     }).WithName("GetCurrentTemperature")
