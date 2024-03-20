@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
     <RootNamespace>projeto_ruim</RootNamespace>
+    <UserSecretsId>562bc049-5f5e-4afb-9929-8531fdf8a3ad</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

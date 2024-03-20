@@ -1,3 +1,10 @@
+using System;
+using System.Linq;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -36,10 +43,13 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.MapGet("/current-degrees", () =>
-    {
-        return new { Degrees = "38.5 C°" };
-    }).WithName("GetCurrentTemperature")
+app.MapGet("/current-degrees/{where}", ([FromRoute] string where, DateTimeOffset when) =>
+        new {
+            when,
+            city = where,
+            temperatureC = "38.5 C°"
+        }
+    ).WithName("GetCurrentTemperature")
     .WithOpenApi();
 
 app.Run();
