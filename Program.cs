@@ -20,15 +20,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // Register Endpoints:
-app.RegisterEndpointGetWeatherForecast();
-
-app.MapGet("/current-degrees/{where}", ([FromRoute] string where, DateTimeOffset when) =>
-        new {
-            when,
-            city = where,
-            temperatureC = "38.5 C°"
-        }
-    ).WithName("GetCurrentTemperature")
-    .WithOpenApi();
+app.RegisterEndpointGetWeatherForecast()
+   .RegisterEndpointGetCurrentTemperature();
 
 app.Run();
