@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -42,15 +43,13 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.MapGet("/current-degrees", (string where, DateTimeOffset when) =>
-    {
-        return new
-        {
+app.MapGet("/current-degrees/{where}", ([FromRoute] string where, DateTimeOffset when) =>
+        new {
             when,
             city = where,
             temperatureC = "38.5 C°"
-        };
-    }).WithName("GetCurrentTemperature")
+        }
+    ).WithName("GetCurrentTemperature")
     .WithOpenApi();
 
 app.Run();
