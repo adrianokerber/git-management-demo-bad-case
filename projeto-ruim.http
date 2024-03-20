@@ -4,3 +4,9 @@ GET {{projeto_ruim_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+@where = sapucaia-do-sul
+@when = 2024-03-20
+
+GET {{projeto_ruim_HostAddress}}/current-degrees/{{where}}?when={{when}}
+Accept: application/json
